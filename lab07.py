@@ -1,5 +1,6 @@
 
 
+
 def print_row(a:int):
     row = []
     for c in range(alphabet_len):
@@ -73,21 +74,39 @@ alphabet_len = len(alphabet)
 key = 'MONKEY'
 plaintext = 'LIGHTHOUSES ARE COOL'
 ciphertext = 'XWTRXE HEOWXMERJGL Z'
-et = encrypt_vigenere(key, plaintext, alphabet)
-print(et)
+#et = encrypt_vigenere(key, plaintext, alphabet)
+#print(et)
 
-pt =decrypt_vigenere(key,et,alphabet)
+#pt =decrypt_vigenere(key,et,alphabet)
 
-print(pt)
+#print(pt)
+
 
 choice = 0
-while True:
-    choice = int(input("select option[1,2,3]:  "))
-    if not (1<= choice <= 3):
+et_list = []
+pt_list = []
+
+print('1. Encrypt a word to list')
+print('2. Decrypt a word in list')
+print('3. Clear list')
+print('4. Exit')
+
+
+while choice != 4:
+    choice = int(input('Enter choice[1,2,3,4]: '))
+    if not (1<= choice <= 4):
         continue
     if choice == 1:
-        plaintext = input("what is your message: ")
-        encrypt_vigenere(key, plaintext, alphabet)
-    elif choice == 2
-        for ct in et_lst:
-            print(decrypt_vigenere(ke))
+        message = input('Enter message: ').upper()
+        et_list.append(encrypt_vigenere(key, message, alphabet))
+        print(f'Encrypted words: {et_list}')
+    if choice == 2:
+        for ct in et_list:
+            print(decrypt_vigenere(key, ct, alphabet))
+    if choice == 3:
+        et_list.clear()
+        print('List has been cleared')
+        #(decrypt_vigenere(key, message, alphabet))
+    if choice == 4:
+        print("thanks for playing")
+        break
